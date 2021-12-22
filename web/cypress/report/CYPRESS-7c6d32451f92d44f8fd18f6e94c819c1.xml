@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.1040" tests="2" failures="1">
+  <testsuite name="Root Suite" timestamp="2021-11-29T17:39:38" tests="0" file="cypress/integration/practiceMemberProfile.feature" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="Practice Member Profile" timestamp="2021-11-29T17:39:38" tests="2" time="0.1040" failures="1">
+    <testcase name="Practice Member Profile I can see a practice member profile" time="0.0000" classname="I can see a practice member profile">
+      <failure message="Timed out retrying after 4000ms: Expected to find content: &apos;Sparkle Mosstree&apos; within the element: &lt;body&gt; but never did." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Sparkle Mosstree' within the element: <body> but never did.
+    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress/integration/practiceMemberProfile.feature:10:34)
+    at Context.resolveAndRunStepDefinition (http://localhost:3000/__cypress/tests?p=cypress/integration/practiceMemberProfile.feature:8128:29)
+    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress/integration/practiceMemberProfile.feature:7449:35)]]></failure>
+    </testcase>
+    <testcase name="Practice Member Profile I can see the list of practice member profiles" time="0.1040" classname="I can see the list of practice member profiles">
+    </testcase>
+  </testsuite>
+</testsuites>

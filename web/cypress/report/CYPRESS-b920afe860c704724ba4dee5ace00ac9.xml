@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.6670" tests="2" failures="1">
+  <testsuite name="Root Suite" timestamp="2021-12-06T16:57:38" tests="0" file="cypress/integration/practiceMemberProfile.feature" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="Practice Member Profile" timestamp="2021-12-06T16:57:38" tests="2" time="0.6670" failures="1">
+    <testcase name="Practice Member Profile I can see a practice member profile" time="0.6670" classname="I can see a practice member profile">
+    </testcase>
+    <testcase name="Practice Member Profile I can see the list of practice member profiles" time="0.0000" classname="I can see the list of practice member profiles">
+      <failure message="`cy.contains()` can only accept a string, number or regular expression.
+
+https://on.cypress.io/contains" type="CypressError"><![CDATA[CypressError: `cy.contains()` can only accept a string, number or regular expression.
+
+https://on.cypress.io/contains
+    at Context.contains (http://localhost:3000/__cypress/runner/cypress_runner.js:156686:78)
+    at Context.<anonymous> (http://localhost:3000/__cypress/runner/cypress_runner.js:169912:23)
+From Your Spec Code:
+    at eval (http://localhost:3000/__cypress/tests?p=cypress/integration/practiceMemberProfile.feature:18:20)
+at Array.forEach (<anonymous>)
+    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress/integration/practiceMemberProfile.feature:16:20)
+    at Context.resolveAndRunStepDefinition (http://localhost:3000/__cypress/tests?p=cypress/integration/practiceMemberProfile.feature:8132:29)
+    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress/integration/practiceMemberProfile.feature:7453:35)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

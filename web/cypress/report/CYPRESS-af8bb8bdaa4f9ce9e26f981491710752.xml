@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.0000" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2021-12-08T20:35:46" tests="0" file="cypress/integration/homePage.feature" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="Home Page" timestamp="2021-12-08T20:35:46" tests="1" time="0.0000" failures="1">
+    <testcase name="Home Page I can see selection criteria" time="0.0000" classname="I can see selection criteria">
+      <failure message="Step implementation missing for: I see" type="Error"><![CDATA[Error: Step implementation missing for: I see
+    at Context.resolveAndRunStepDefinition (http://localhost:3000/__cypress/tests?p=cypress/integration/homePage.feature:13446:11)
+    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress/integration/homePage.feature:12761:35)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
