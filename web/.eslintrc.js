@@ -5,7 +5,7 @@ module.exports = {
     'cypress/globals': true,
   },
   extends: [
-    'airbnb',
+    'react-app',
   ],
   plugins: [
     'cypress',

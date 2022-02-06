@@ -1,4 +1,3 @@
-using TodoApi.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -26,11 +25,6 @@ namespace TodoApi
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "dndCapstone", Version = "v1" });
             });
-
-            services.AddDbContext<TodoContext>(b =>
-            {
-                b.UseSqlServer(Configuration.GetConnectionString("SqlDbConnection"));
-            }, ServiceLifetime.Transient);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
