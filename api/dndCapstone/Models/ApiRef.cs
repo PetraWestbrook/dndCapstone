@@ -1,6 +1,6 @@
-namespace APIReference
+namespace commonModel
 {
-    public class commonModel
+    public class APIRef
     {
         public string index { get; set; }
         public string name { get; set; }
