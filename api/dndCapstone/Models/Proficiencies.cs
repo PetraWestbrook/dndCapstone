@@ -6,4 +6,3 @@ namespace proficiencyModel
         public int value { get; set; }
     }
 }
-
