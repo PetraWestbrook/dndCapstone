@@ -20,32 +20,31 @@ namespace MonsterApiConnection
         public int intelligence { get; set; }
         public int wisdom { get; set; }
         public int charisma { get; set; }
-        public proficiencyModel.proficienciesClass[] proficiencies {get;set;}
-}
-
-class MonsterCall
-{
-    static HttpClient client = new HttpClient();
-    static string baseAddress = "https://www.dnd5eapi.co/api/";
-    static async Task<Uri> CreateMonsterAsync(Monsters monster)
-    {
-        HttpResponseMessage response = await client.PostAsJsonAsync(
-            $"{baseAddress}monsters/aboleth", monster);
-        response.EnsureSuccessStatusCode();
-
-        // return URI of the created resource.
-        return response.Headers.Location;
+        public proficiencyModel.proficienciesClass[] proficiencies { get; set; }
+        public string[] damage_vulnerabilities { get; set; }
+        public string[] damage_resistances { get; set; }
+        public string[] damage_immunities { get; set; }
+        public string[] condition_immunities { get; set; }
+        public object senses { get; set; }
+        public string languages { get; set; }
+        public decimal challenge_rating { get; set; }
+        public specialAbilitiesModel.specialAbilitiesClass[] special_abilities { get; set; }
     }
 
-    public static async Task<Monsters> GetMonstersAsync(string path)
+    class MonsterCall
     {
-        Monsters monster = null;
-        HttpResponseMessage response = await client.GetAsync($"{baseAddress}monsters/{path}");
-        if (response.IsSuccessStatusCode)
+        static HttpClient client = new HttpClient();
+        static string baseAddress = "https://www.dnd5eapi.co/api/";
+
+        public static async Task<Monsters> GetMonstersAsync(string path)
         {
-            monster = await response.Content.ReadFromJsonAsync<Monsters>();
+            Monsters monster = null;
+            HttpResponseMessage response = await client.GetAsync($"{baseAddress}monsters/{path}");
+            if (response.IsSuccessStatusCode)
+            {
+                monster = await response.Content.ReadFromJsonAsync<Monsters>();
+            }
+            return monster;
         }
-        return monster;
     }
-}
 }
