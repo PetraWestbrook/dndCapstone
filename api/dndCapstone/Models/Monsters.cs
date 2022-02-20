@@ -30,6 +30,8 @@ namespace MonsterApiConnection
         public decimal challenge_rating { get; set; }
         public specialAbilitiesModel.specialAbilitiesClass[] special_abilities { get; set; }
         public ActionsModel.ActionsClass[] actions { get; set; }
+        public ActionsModel.ActionsClass[] legendary_actions { get; set; }
+        public string url { get; set; }
     }
 
     class MonsterCall
