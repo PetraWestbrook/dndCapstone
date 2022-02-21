@@ -1,5 +1,3 @@
-using System;
-
 namespace MonsterApiConnection
 {
     public class Monsters
