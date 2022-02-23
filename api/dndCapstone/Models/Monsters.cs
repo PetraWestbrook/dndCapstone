@@ -2,34 +2,34 @@ namespace MonsterApiConnection
 {
     public class Monsters
     {
-        public string name { get; set; }
-        public string size { get; set; }
-        public string type { get; set; }
-        public string subtype { get; set; }
-        public string alignment { get; set; }
-        public int armor_class { get; set; }
-        public int hit_points { get; set; }
-        public string hit_dice { get; set; }
-        public commonModel.APIRef[] forms { get; set; }
-        public object speed { get; set; }
-        public int strength { get; set; }
-        public int dexterity { get; set; }
-        public int constitution { get; set; }
-        public int intelligence { get; set; }
-        public int wisdom { get; set; }
-        public int charisma { get; set; }
-        public proficiencyModel.proficienciesClass[] proficiencies { get; set; }
-        public string[] damage_vulnerabilities { get; set; }
-        public string[] damage_resistances { get; set; }
-        public string[] damage_immunities { get; set; }
-        public string[] condition_immunities { get; set; }
-        public object senses { get; set; }
-        public string languages { get; set; }
-        public decimal challenge_rating { get; set; }
-        public specialAbilitiesModel.specialAbilitiesClass[] special_abilities { get; set; }
-        public ActionsModel.ActionsClass[] actions { get; set; }
-        public ActionsModel.ActionsClass[] legendary_actions { get; set; }
-        public string url { get; set; }
+        public string Name { get; set; }
+        public string Size { get; set; }
+        public string Type { get; set; }
+        public string Subtype { get; set; }
+        public string Alignment { get; set; }
+        public int Armor_Class { get; set; }
+        public int Hit_Points { get; set; }
+        public string Hit_Dice { get; set; }
+        public commonModel.APIRef[] Forms { get; set; }
+        public object Speed { get; set; }
+        public int Strength { get; set; }
+        public int Dexterity { get; set; }
+        public int Constitution { get; set; }
+        public int Intelligence { get; set; }
+        public int Wisdom { get; set; }
+        public int Charisma { get; set; }
+        public proficiencyModel.proficienciesClass[] Proficiencies { get; set; }
+        public string[] Damage_Vulnerabilities { get; set; }
+        public string[] Damage_Resistances { get; set; }
+        public string[] Damage_Immunities { get; set; }
+        public string[] Condition_Immunities { get; set; }
+        public object Senses { get; set; }
+        public string Languages { get; set; }
+        public decimal Challenge_Rating { get; set; }
+        public specialAbilitiesModel.specialAbilitiesClass[] Special_Abilities { get; set; }
+        public ActionsModel.ActionsClass[] Actions { get; set; }
+        public ActionsModel.ActionsClass[] Legendary_Actions { get; set; }
+        public string Url { get; set; }
     }
 
     class MonsterCall
