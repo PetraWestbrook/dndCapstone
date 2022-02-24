@@ -4,6 +4,7 @@ import './App.scss';
 import LoginButton from './components/LoginButton';
 import LogoutButton from './components/LogoutButton';
 import Profile from './components/Profile';
+import Monsters from './components/MonsterDisplay';
 
 function App () {
   const { isLoading } = useAuth0();
@@ -15,6 +16,7 @@ function App () {
       <LoginButton />
       <LogoutButton />
       <Profile />
+      <Monsters />
     </>
   )
 }
