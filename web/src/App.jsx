@@ -16,7 +16,7 @@ function App () {
       <LoginButton />
       <LogoutButton />
       <Profile />
-      <Monsters />
+      <Monsters MonsterName='bandit'/>
     </>
   )
 }
