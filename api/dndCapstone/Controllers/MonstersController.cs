@@ -11,10 +11,16 @@ namespace Monsters.Controllers
     [Route("api/[controller]")]
     public class MonstersController : ControllerBase
     {
-        [HttpGet("{monsterName}")]
-        public async Task<IActionResult> Get([FromRoute] string monsterName)
+        [HttpGet]
+        public async Task<IActionResult> GetMonster()
         {
-            var monster = await MonsterApiConnection.MonsterCall.GetMonstersAsync(monsterName);
+            var monster = await MonsterApiConnection.MonstersCall.GetMonstersAsync();
+            return new OkObjectResult(monster);
+        }
+        [HttpGet("{monsterName}")]
+        public async Task<IActionResult> GetByMonsterName([FromRoute] string monsterName)
+        {
+            var monster = await MonsterApiConnection.MonsterCall.GetMonsterByNameAsync(monsterName);
             return new OkObjectResult(monster);
         }
     }

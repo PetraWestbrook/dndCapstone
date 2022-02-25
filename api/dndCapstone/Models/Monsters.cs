@@ -2,45 +2,19 @@ namespace MonsterApiConnection
 {
     public class Monsters
     {
-        public string Name { get; set; }
-        public string Size { get; set; }
-        public string Type { get; set; }
-        public string Subtype { get; set; }
-        public string Alignment { get; set; }
-        public int Armor_Class { get; set; }
-        public int Hit_Points { get; set; }
-        public string Hit_Dice { get; set; }
-        public commonModel.APIRef[] Forms { get; set; }
-        public object Speed { get; set; }
-        public int Strength { get; set; }
-        public int Dexterity { get; set; }
-        public int Constitution { get; set; }
-        public int Intelligence { get; set; }
-        public int Wisdom { get; set; }
-        public int Charisma { get; set; }
-        public proficiencyModel.proficienciesClass[] Proficiencies { get; set; }
-        public string[] Damage_Vulnerabilities { get; set; }
-        public string[] Damage_Resistances { get; set; }
-        public string[] Damage_Immunities { get; set; }
-        public string[] Condition_Immunities { get; set; }
-        public object Senses { get; set; }
-        public string Languages { get; set; }
-        public decimal Challenge_Rating { get; set; }
-        public specialAbilitiesModel.specialAbilitiesClass[] Special_Abilities { get; set; }
-        public ActionsModel.ActionsClass[] Actions { get; set; }
-        public ActionsModel.ActionsClass[] Legendary_Actions { get; set; }
-        public string Url { get; set; }
+        public int Count { get; set; }
+        public commonModel.APIRef[] Results { get; set; }
     }
-
-    class MonsterCall
+    class MonstersCall
     {
         static HttpClient client = new HttpClient();
         static string baseAddress = "https://www.dnd5eapi.co/api/";
 
-        public static async Task<Monsters> GetMonstersAsync(string path)
+    public static async Task<Monsters> GetMonstersAsync()
         {
             Monsters monster = null;
-            HttpResponseMessage response = await client.GetAsync($"{baseAddress}monsters/{path}");
+            HttpResponseMessage response = await client.GetAsync($"{baseAddress}monsters/");
+            Console.WriteLine(response);
             if (response.IsSuccessStatusCode)
             {
                 monster = await response.Content.ReadFromJsonAsync<Monsters>();
