@@ -2,9 +2,9 @@ namespace ActionsModel
 {
     public class ActionsClass
     {
-        public string name { get; set; }
-        public string desc { get; set; }
-        public OptionsModel.OptionsClass options { get; set; }
-        public DamageModel.DamageClass[] damage { get; set; }
+        public string Name { get; set; }
+        public string Desc { get; set; }
+        public OptionsModel.OptionsClass Options { get; set; }
+        public DamageModel.DamageClass[] Damage { get; set; }
     }
 }

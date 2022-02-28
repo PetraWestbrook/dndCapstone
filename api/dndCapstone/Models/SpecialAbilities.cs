@@ -2,9 +2,9 @@ namespace specialAbilitiesModel
 {
     public class specialAbilitiesClass
     {
-        public string name { get; set; }
-        public string desc { get; set; }
-        public DCModel.DCClass dc { get; set; }
-        public UsageModel.UsageClass usage { get; set; }
+        public string Name { get; set; }
+        public string Desc { get; set; }
+        public DCModel.DCClass Dc { get; set; }
+        public UsageModel.UsageClass Usage { get; set; }
     }
 }

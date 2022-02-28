@@ -2,7 +2,7 @@ namespace UsageModel
 {
     public class UsageClass
     {
-        public string type { get; set; }
-        public int times { get; set; }
+        public string Type { get; set; }
+        public int Times { get; set; }
     }
 }

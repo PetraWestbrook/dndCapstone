@@ -37,11 +37,10 @@ namespace MonsterApiConnection
         static HttpClient client = new HttpClient();
         static string baseAddress = "https://www.dnd5eapi.co/api/";
 
-        public static async Task<Monster> GetMonsterByNameAsync(string path)
+        public static async Task<Monster> GetByMonsterNameAsync(string path)
         {
             Monster monster = null;
             HttpResponseMessage response = await client.GetAsync($"{baseAddress}monsters/{path}");
-            Console.WriteLine(response);
             if (response.IsSuccessStatusCode)
             {
                 monster = await response.Content.ReadFromJsonAsync<Monster>();

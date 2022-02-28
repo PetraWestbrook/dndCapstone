@@ -14,13 +14,13 @@ namespace Monsters.Controllers
         [HttpGet]
         public async Task<IActionResult> GetMonster()
         {
-            var monster = await MonsterApiConnection.MonstersCall.GetMonstersAsync();
+            var monster = await MonsterApiConnection.MonstersCall.GetMonsterListAsync();
             return new OkObjectResult(monster);
         }
         [HttpGet("{monsterName}")]
         public async Task<IActionResult> GetByMonsterName([FromRoute] string monsterName)
         {
-            var monster = await MonsterApiConnection.MonsterCall.GetMonsterByNameAsync(monsterName);
+            var monster = await MonsterApiConnection.MonsterCall.GetByMonsterNameAsync(monsterName);
             return new OkObjectResult(monster);
         }
     }
