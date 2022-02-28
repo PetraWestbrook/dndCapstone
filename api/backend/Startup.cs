@@ -23,7 +23,7 @@ namespace TodoApi
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "dndCapstone", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Scrapper", Version = "v1" });
             });
         }
 
@@ -34,7 +34,7 @@ namespace TodoApi
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "dndCapstone v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Scrapper v1"));
             }
 
             app.UseCors(builder => builder

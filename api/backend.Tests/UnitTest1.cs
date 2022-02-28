@@ -1,6 +1,6 @@
 using Xunit;
 
-namespace dndCapstone.Tests;
+namespace backend.Tests;
 
 public class UnitTest1
 {
