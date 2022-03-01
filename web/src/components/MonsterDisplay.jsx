@@ -24,12 +24,18 @@ const Monster = (props) => {
     }
 
     if (monsterDisplay) {
+        function toTitleCase(str) {
+            return str.replace(/\w\S*/g, function(txt){
+                return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+            });
+        }
         return (
             <React.Fragment>
                 <h1>{monsterDisplay.name}</h1>
                 <p>Size: {monsterDisplay.size}</p>
-                <p>Type: {monsterDisplay.type}</p>
-                <p>Subtype: {monsterDisplay.subtype}</p>
+                <p>Type: {toTitleCase(monsterDisplay.type)}</p>
+                {/* <p>Subtype: {toTitleCase(monsterDisplay.subtype)}</p> */}
+                <p>Armor Class: {monsterDisplay.armor_Class}</p>
             </React.Fragment>
             )
     }
