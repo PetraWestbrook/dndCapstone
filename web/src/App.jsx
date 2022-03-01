@@ -4,7 +4,6 @@ import './App.scss';
 import LoginButton from './components/LoginButton';
 import LogoutButton from './components/LogoutButton';
 import Profile from './components/Profile';
-import Monster from './components/MonsterDisplay';
 import Monsters from './components/MonsterList';
 
 function App () {
@@ -17,7 +16,6 @@ function App () {
       <LoginButton />
       <LogoutButton />
       <Profile />
-      <Monster MonsterName='bandit'/>
       <Monsters />
     </>
   )

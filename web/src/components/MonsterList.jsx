@@ -1,5 +1,6 @@
 import axios from 'axios';
 import  React, { useEffect, useState } from 'react';
+import Monster from './MonsterDisplay';
 
 const Monsters = () => {
     const [error, setError] = useState(null);
@@ -25,15 +26,15 @@ const Monsters = () => {
 
     if (monsterList) {
         let randomIndex = Math.floor(Math.random() * monsterList.count)
-        // let randomMonster = monsterList.results[randomIndex].index
+        let randomMonster = monsterList.results[randomIndex].index
         return (
-            <React.Fragment>
-                <h2>{monsterList.results[randomIndex].name}</h2>
-            </React.Fragment>
+            <Monster MonsterName={randomMonster}/>
             )
         }
         
     return <h1>Loading...</h1>
+
 };
+
         
 export default Monsters

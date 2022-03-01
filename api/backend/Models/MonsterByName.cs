@@ -22,7 +22,7 @@ namespace MonsterApiConnection
         public string[] Damage_Vulnerabilities { get; set; }
         public string[] Damage_Resistances { get; set; }
         public string[] Damage_Immunities { get; set; }
-        public string[] Condition_Immunities { get; set; }
+        public commonModel.APIRef[] Condition_Immunities { get; set; }
         public object Senses { get; set; }
         public string Languages { get; set; }
         public decimal Challenge_Rating { get; set; }
