@@ -17,22 +17,22 @@ const Monster = (props) => {
         fetchMonster().catch(console.error);
     }, [props.MonsterName]);
 
-    
-    
     if (error) {
         return (
             <div>Oops! Could not fetch monster.</div>
             )
-        }
+    }
 
     if (monsterDisplay) {
         return (
             <React.Fragment>
                 <h1>{monsterDisplay.name}</h1>
-                <p>{monsterDisplay.size}</p>
+                <p>Size: {monsterDisplay.size}</p>
+                <p>Type: {monsterDisplay.type}</p>
+                <p>Subtype: {monsterDisplay.subtype}</p>
             </React.Fragment>
             )
-        }
+    }
         
     return <h1>Loading...</h1>
 };
