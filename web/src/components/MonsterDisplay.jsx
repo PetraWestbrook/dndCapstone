@@ -1,10 +1,9 @@
 import axios from 'axios';
 import  React, { useEffect, useState } from 'react';
 
-const Monsters = (props) => {
+const Monster = (props) => {
     const [error, setError] = useState(null);
     const [monsterDisplay, setMonsterDisplay] = useState(null);
-    console.log('monsterComponent')
 
     useEffect(() => {
         const fetchMonster = async () => {
@@ -13,10 +12,8 @@ const Monsters = (props) => {
                 setMonsterDisplay(data);
             } catch (err) {
                 setError(err)
-                console.log(err)
             }
         };
-        console.log('useEffect')
         fetchMonster().catch(console.error);
     }, [props.MonsterName]);
 
@@ -40,4 +37,4 @@ const Monsters = (props) => {
     return <h1>Loading...</h1>
 };
         
-export default Monsters
+export default Monster
