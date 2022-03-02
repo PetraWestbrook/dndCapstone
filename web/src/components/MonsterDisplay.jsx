@@ -43,41 +43,62 @@ const Monster = (props) => {
                     <div>Form(s): {monsterDisplay.forms.map((form) => {
                         return (
                             <React.Fragment>
-                                <div>{form.name}</div>
+                                <li>{form.name}</li>
                             </React.Fragment>
                         )
                     })}</div> : <React.Fragment />}
                 <div>Walking Speed: {monsterDisplay.speed.walk}</div>
-                <div>Flying Speed: {monsterDisplay.speed.fly}</div>
+                {monsterDisplay.speed.fly ?
+                    <div>Flying Speed: {monsterDisplay.speed.fly}</div> : <React.Fragment />}
+                {monsterDisplay.speed.swim ?
+                    <div>Swimming Speed: {monsterDisplay.speed.swim}</div> : <React.Fragment />}
                 <div>Strength: {monsterDisplay.strength}</div>
                 <div>Dexterity: {monsterDisplay.dexterity}</div>
                 <div>Constitution: {monsterDisplay.constitution}</div>
                 <div>Intelligence: {monsterDisplay.intelligence}</div>
                 <div>Wisdom: {monsterDisplay.wisdom}</div>
                 <div>Charisma: {monsterDisplay.charisma}</div>
-                <div>{monsterDisplay.proficiencies.map((proficiency) => {
-                    return (
-                        <React.Fragment>
-                            <div>Proficiencies:</div>
-                            <div>{proficiency.proficiency.name}</div>
-                            <div>Value: {proficiency.value}</div>
-                        </React.Fragment>
-                    )
-                })}</div>
-                <div>Damage Vulnerabilities: {monsterDisplay.damage_Vulnerabilities.map((damageVulnerabilities) => {
-                    return (
-                        <React.Fragment>
-                            <div>{damageVulnerabilities}</div>
-                        </React.Fragment>
-                    )
-                })}</div>
-                <div>Damage Resistances: {monsterDisplay.damage_Resistances.map((damageResistances) => {
-                    return (
-                        <React.Fragment>
-                            <div>{damageResistances}</div>
-                        </React.Fragment>
-                    )
-                })}</div>
+                {monsterDisplay.proficiencies.length ? 
+                    <div>Proficiencies: {monsterDisplay.proficiencies.map((proficiency) => {
+                        return (
+                            <React.Fragment>
+                                <li>{proficiency.proficiency.name}</li>
+                                <div>Value: {proficiency.value}</div>
+                            </React.Fragment>
+                        )    
+                })}</div> : <React.Fragment />}
+                {monsterDisplay.damage_Vulnerabilities.length ? 
+                    <div>Damage Vulnerability: {monsterDisplay.damage_Vulnerabilities.map((damageVulnerability) => {
+                        return (
+                            <React.Fragment>
+                                <li>{toTitleCase(damageVulnerability)}</li>
+                            </React.Fragment>
+                        )    
+                })}</div> : <React.Fragment />}
+                {monsterDisplay.damage_Resistances.length ? 
+                    <div>Damage Resistance: {monsterDisplay.damage_Resistances.map((damageResistance) => {
+                        return (
+                            <React.Fragment>
+                                <li>{toTitleCase(damageResistance)}</li>
+                            </React.Fragment>
+                        )    
+                })}</div> : <React.Fragment />}
+                {monsterDisplay.damage_Immunities.length ? 
+                    <div>Damage Immunity: {monsterDisplay.damage_Immunities.map((damageImmunity) => {
+                        return (
+                            <React.Fragment>
+                                <li>{toTitleCase(damageImmunity)}</li>
+                            </React.Fragment>
+                        )    
+                })}</div> : <React.Fragment />}
+                {monsterDisplay.condition_Immunities.length ? 
+                    <div>Condition Immunity: {monsterDisplay.condition_Immunities.map((conditionImmunity) => {
+                        return (
+                            <React.Fragment>
+                                <li>{conditionImmunity.name}</li>
+                            </React.Fragment>
+                        )    
+                })}</div> : <React.Fragment />}
             </React.Fragment>
             )
     }
