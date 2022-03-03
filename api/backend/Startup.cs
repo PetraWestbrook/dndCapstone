@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using backend.Models;
 
 namespace TodoApi
 {
@@ -25,6 +26,13 @@ namespace TodoApi
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Scrapper", Version = "v1" });
             });
+
+            services.AddDbContext<AppDbContext>(b =>
+            {
+                b.UseLazyLoadingProxies();
+                b.UseSqlServer(Configuration.GetConnectionString("SqlDbConnection"),
+                    o => o.UseQuerySplittingBehavior(QuerySplittingBehavior.SingleQuery));
+            }, ServiceLifetime.Transient);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
