@@ -32,6 +32,7 @@ const Monster = (props) => {
         return (
             <React.Fragment>
                 <h1>{monsterDisplay.name}</h1>
+                <div>Challenge Rating: {monsterDisplay.challenge_Rating}</div>
                 <div>Size: {monsterDisplay.size}</div>
                 <div>Type: {toTitleCase(monsterDisplay.type)}</div>
                 {monsterDisplay.subtype ?
@@ -98,6 +99,72 @@ const Monster = (props) => {
                                 <li>{conditionImmunity.name}</li>
                             </React.Fragment>
                         )    
+                })}</div> : <React.Fragment />}
+                <div>Senses:</div>
+                <li>Passive Perception: {monsterDisplay.senses.passive_perception}</li>
+                {monsterDisplay.senses.blindsight ?
+                    <li>Blind Sight: {monsterDisplay.senses.blindsight}</li> : <React.Fragment />}
+                {monsterDisplay.senses.darkvision ?
+                    <li>Darkvision: {monsterDisplay.senses.darkvision}</li> : <React.Fragment />}
+                {monsterDisplay.senses.tremorsense ?
+                    <li>Tremorsense: {monsterDisplay.senses.tremorsense}</li> : <React.Fragment />}
+                {monsterDisplay.senses.truesight ?
+                    <li>Truesight: {monsterDisplay.senses.truesight}</li> : <React.Fragment />}
+                <div>Languages: {toTitleCase(monsterDisplay.languages)}</div>
+                {monsterDisplay.special_Abilities ? 
+                    <div>Special Ability: {monsterDisplay.special_Abilities.map((specialAbility) => {
+                        return (
+                            <React.Fragment>
+                                <li>{specialAbility.name}</li>
+                                {specialAbility.dc ?
+                                <div>DC: {specialAbility.dc.dc_Type.name} {specialAbility.dc.dc_Value}</div> : <React.Fragment />}
+                                <div>Description: {specialAbility.desc}</div>
+                                {specialAbility.usage ?
+                                <div>Usage: {specialAbility.usage.times} times {specialAbility.usage.type}</div> : <React.Fragment />}
+                            </React.Fragment>
+                        )    
+                })}</div> : <React.Fragment />}
+                {monsterDisplay.actions ?
+                <div>Actions: {monsterDisplay.actions.map((action) => {
+                    return (
+                        <React.Fragment>
+                            <li>{action.name}</li>
+                            <div>Description: {action.desc}</div>
+                            {action.dc ? 
+                            <div>DC: {action.dc.dc_Type.name} {action.dc.dc_Value}</div> : <React.Fragment />}
+                            {/* <div>Attack Bonus: {action.attack_Bonus}</div> */}
+                            {action.damage ?
+                                action.damage.map((dmg) => {
+                                    return (
+                                        <React.Fragment>
+                                            <div>Damage Type: {dmg.damage_Type.name}</div>
+                                            <div>Damage Dice: {dmg.damage_Dice}</div>
+                                        </React.Fragment>
+                                    )
+                                }) : <React.Fragment />}
+                            </React.Fragment>
+                        )
+                })}</div> : <React.Fragment />}
+                {monsterDisplay.legendary_Actions ?
+                <div>Legendary Actions: {monsterDisplay.legendary_Actions.map((la) => {
+                    return (
+                        <React.Fragment>
+                            <li>{la.name}</li>
+                            <div>Description: {la.desc}</div>
+                            {la.dc ? 
+                            <div>DC: {la.dc.dc_Type.name} {la.dc.dc_Value}</div> : <React.Fragment />}
+                            {/* <div>Attack Bonus: {la.attack_Bonus}</div> */}
+                            {la.damage ? 
+                                la.damage.map((dmg) => {
+                                return (
+                                    <React.Fragment>
+                                        <div>Damage Type: {dmg.damage_Type.name}</div>
+                                        <div>Damage Dice: {dmg.damage_Dice}</div>
+                                    </React.Fragment>
+                                )
+                            }): <React.Fragment />}
+                        </React.Fragment>
+                        )
                 })}</div> : <React.Fragment />}
             </React.Fragment>
             )
