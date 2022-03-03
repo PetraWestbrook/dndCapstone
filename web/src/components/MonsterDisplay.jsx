@@ -124,7 +124,7 @@ const Monster = (props) => {
                             </React.Fragment>
                         )    
                 })}</div> : <React.Fragment />}
-                {monsterDisplay.actions ?
+                {monsterDisplay.actions.length ?
                 <div>Actions: {monsterDisplay.actions.map((action) => {
                     return (
                         <React.Fragment>
@@ -132,16 +132,6 @@ const Monster = (props) => {
                             <div>Description: {action.desc}</div>
                             {action.dc ? 
                             <div>DC: {action.dc.dc_Type.name} {action.dc.dc_Value}</div> : <React.Fragment />}
-                            {/* <div>Attack Bonus: {action.attack_Bonus}</div> */}
-                            {action.damage ?
-                                action.damage.map((dmg) => {
-                                    return (
-                                        <React.Fragment>
-                                            <div>Damage Type: {dmg.damage_Type.name}</div>
-                                            <div>Damage Dice: {dmg.damage_Dice}</div>
-                                        </React.Fragment>
-                                    )
-                                }) : <React.Fragment />}
                             </React.Fragment>
                         )
                 })}</div> : <React.Fragment />}
@@ -153,16 +143,6 @@ const Monster = (props) => {
                             <div>Description: {la.desc}</div>
                             {la.dc ? 
                             <div>DC: {la.dc.dc_Type.name} {la.dc.dc_Value}</div> : <React.Fragment />}
-                            {/* <div>Attack Bonus: {la.attack_Bonus}</div> */}
-                            {la.damage ? 
-                                la.damage.map((dmg) => {
-                                return (
-                                    <React.Fragment>
-                                        <div>Damage Type: {dmg.damage_Type.name}</div>
-                                        <div>Damage Dice: {dmg.damage_Dice}</div>
-                                    </React.Fragment>
-                                )
-                            }): <React.Fragment />}
                         </React.Fragment>
                         )
                 })}</div> : <React.Fragment />}
